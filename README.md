@@ -241,7 +241,7 @@ Add screenshots for:
 
 # 👨‍💻 Author
 
-Rudraksh Bhardwaj
+Rudraksh
 
 ---
 
