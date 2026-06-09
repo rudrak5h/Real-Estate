@@ -277,9 +277,9 @@ if page == "Property Prediction":
             ],
 
             "Transport_Score": [
-                3 if transport == "High"
-                else 2 if transport == "Medium"
-                else 1
+                2 if transport == "High"
+                else 1 if transport == "Medium"
+                else 0
             ],
 
             "Amenities_Count": [
@@ -305,8 +305,10 @@ if page == "Property Prediction":
 
             le = label_encoders[col]
 
-            input_data[col] = le.transform(
-                input_data[col]
+            input_data[col] = input_data[col].apply(
+                lambda x: le.transform([x])[0]
+                if x in le.classes_
+                else 0
             )
 
 

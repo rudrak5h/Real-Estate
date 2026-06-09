@@ -1,99 +1,98 @@
 # 🏠 Real Estate Investment Advisor
 
-A Machine Learning based Real Estate Investment Advisor that predicts whether a property is a good investment and estimates future property prices using Classification and Regression models.
+## 📌 Project Overview
 
----
+The Real Estate Investment Advisor is a Machine Learning project that predicts whether a property is a good investment and estimates its future price after 5 years.
 
-# 📌 Project Overview
+The project uses:
 
-This project helps users:
-
-* Predict whether a property is a **Good Investment**
-* Estimate **Future Property Price after 5 Years**
-* Analyze real estate trends using visual insights
-* Compare multiple Machine Learning models
-* Track experiments using MLflow
-* Use an interactive Streamlit web application
+* Classification models for investment prediction
+* Regression models for future price prediction
+* Feature engineering
+* SMOTE balancing
+* MLflow experiment tracking
+* Streamlit deployment
 
 ---
 
 # 🚀 Features
 
-## ✅ Classification
-
-Predicts whether a property is:
-
-* Good Investment
-* Not Good Investment
-
-## ✅ Regression
-
-Predicts:
-
-* Estimated Property Price after 5 Years
-
-## ✅ Streamlit Dashboard
-
-Interactive UI with:
-
-* Property filters
-* Investment prediction
-* Confidence score
-* Future price prediction
-* Visual insights
-
-## ✅ MLflow Integration
-
-Tracks:
-
-* Experiments
-* Metrics
-* Parameters
-* Model performance
+* Predict Good or Bad Investment
+* Predict Future Property Price
+* Interactive Streamlit Web App
+* Data Visualization Dashboard
+* Feature Importance Analysis
+* MLflow Model Tracking
+* SMOTE for Class Balancing
 
 ---
 
-# 🛠️ Technologies Used
+# 🛠 Technologies Used
 
 * Python
 * Pandas
 * NumPy
 * Scikit-learn
 * XGBoost
-* Streamlit
 * Matplotlib
 * Seaborn
+* Streamlit
 * MLflow
-* Joblib
+* Imbalanced-learn
 
 ---
 
 # 📂 Project Structure
 
-```bash
+```text
 Real-Estate-Investment-Advisor/
 │
 ├── app.py
-├── README.md
-├── requirements.txt
-│
-├── data_pre.ipynb
 ├── model_training.ipynb
+├── data_pre.ipynb
+├── cleaned.csv
+├── requirements.txt
+├── README.md
 │
 ├── best_classification_model.pkl
 ├── best_regression_model.pkl
 ├── scaler.pkl
 ├── label_encoders.pkl
 ├── feature_columns.pkl
-│
-└── screenshots/
 ```
 
 ---
 
-# 📊 Machine Learning Models Used
+# ⚙️ Machine Learning Workflow
 
-## Classification Models
+## 1. Data Preprocessing
+
+* Handling missing values
+* Encoding categorical features
+* Feature scaling
+
+## 2. Feature Engineering
+
+Created new features:
+
+* Price_per_SqFt
+* Transport_Score
+* Amenities_Count
+* Price_Value_Score
+
+## 3. Target Engineering
+
+Created custom target variable:
+
+* Good_Investment
+
+## 4. Handling Imbalanced Data
+
+Used SMOTE to balance class distribution.
+
+## 5. Model Training
+
+### Classification Models
 
 * Logistic Regression
 * Decision Tree
@@ -101,7 +100,7 @@ Real-Estate-Investment-Advisor/
 * Gradient Boosting
 * XGBoost
 
-## Regression Models
+### Regression Models
 
 * Linear Regression
 * Decision Tree Regressor
@@ -111,92 +110,37 @@ Real-Estate-Investment-Advisor/
 
 ---
 
-# ⚙️ Feature Engineering
+# 📊 Evaluation Metrics
 
-Engineered features include:
+## Classification
 
-* Investment_Score
-* Price_per_SqFt
-* Transport_Score
-* Amenities_Count
+* Accuracy
+* Precision
+* Recall
+* F1 Score
 
-These features improve prediction quality and model performance.
+## Regression
 
----
-
-# 📈 MLflow Experiment Tracking
-
-MLflow is used for:
-
-* Logging metrics
-* Tracking experiments
-* Comparing models
-* Saving model runs
-
-Experiments:
-
-* Real_Estate_Classification
-* Real_Estate_Regression
+* MAE
+* RMSE
+* R² Score
 
 ---
 
-# ▶️ How to Run the Project
+# 📈 MLflow Tracking
 
-## 1️⃣ Clone Repository
+MLflow was used for:
 
-```bash
-git clone https://github.com/your-username/Real-Estate-Investment-Advisor.git
-```
-
----
-
-## 2️⃣ Install Requirements
-
-```bash
-pip install -r requirements.txt
-```
+* Experiment tracking
+* Metric logging
+* Parameter logging
+* Model logging
 
 ---
 
-## 3️⃣ Generate Dataset
+# 🌐 Streamlit Application
 
-The cleaned dataset (`cleaned.csv`) is not uploaded due to GitHub file size limitations.
-
-To generate it:
-
-1. Place the original dataset in the project folder
-2. Run:
-
-```bash
-data_pre.ipynb
-```
-
-This will generate:
-
-```bash
-cleaned.csv
-```
-
----
-
-## 4️⃣ Train Models
-
-Run:
-
-```bash
-model_training.ipynb
-```
-
-This generates:
-
-* Trained models
-* Encoders
-* Scaler
-* Feature columns
-
----
-
-## 5️⃣ Run Streamlit App
+Run the app using:
 
 ```bash
 streamlit run app.py
@@ -204,51 +148,16 @@ streamlit run app.py
 
 ---
 
-## 6️⃣ Run MLflow UI
+# 📦 Requirements
+
+Install dependencies:
 
 ```bash
-mlflow ui
+pip install -r requirements.txt
 ```
-
-Open:
-
-```bash
-http://127.0.0.1:5000
-```
-
----
-
-# 📷 Screenshots
-
-Add screenshots for:
-
-* Streamlit Dashboard
-* Prediction Results
-* MLflow Experiments
-* Feature Importance Graphs
-
----
-
-# 📌 Results
-
-* Realistic investment prediction
-* Future property price estimation
-* Interactive ML dashboard
-* MLflow experiment tracking
-* Multiple ML model comparison
 
 ---
 
 # 👨‍💻 Author
 
-Rudraksh
-
----
-
-# ⭐ Future Improvements
-
-* Deploy on Streamlit Cloud
-* Add real-time property APIs
-* Add map-based visualization
-* Improve recommendation engine
-* Deep Learning integration
+Rudraksh Bhardwaj
